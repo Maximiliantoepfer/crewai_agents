@@ -116,6 +116,7 @@ def handle_task(index):
     try:
         res = requests.post("http://localhost:8083/test", json=test_payload)
         try:
+            ic(res.status_code, res.text)
             res.raise_for_status()
         except requests.RequestException as e:
             logger.error(f"Error occurred while running tests: {e}")

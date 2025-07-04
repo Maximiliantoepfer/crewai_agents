@@ -46,3 +46,9 @@
 2025-06-22 17:30:47,077 - INFO - Usage Metrics: total_tokens=2098880 prompt_tokens=2093949 cached_prompt_tokens=1700224 completion_tokens=4931 successful_requests=32
 2025-06-22 17:30:47,077 - INFO - Token usage: total_tokens=2098880 prompt_tokens=2093949 cached_prompt_tokens=1700224 completion_tokens=4931 successful_requests=32
 2025-06-22 17:30:47,098 - ERROR - An error occurred while handling task 1: No data in harnessOutput – possible evaluation error or empty result
+2025-07-04 13:52:03,201 - INFO - Starting CrewaiAgents at 2025-07-04T13:52:03.201197
+
+2025-07-04 13:52:03,201 - INFO - ___ Task 1  ___
+2025-07-04 13:55:13,440 - INFO - Usage Metrics: total_tokens=2243338 prompt_tokens=2238779 cached_prompt_tokens=2002048 completion_tokens=4559 successful_requests=32
+2025-07-04 13:55:13,443 - INFO - Token usage: total_tokens=2243338 prompt_tokens=2238779 cached_prompt_tokens=2002048 completion_tokens=4559 successful_requests=32
+2025-07-04 13:55:14,049 - ERROR - An error occurred while handling task 1: No data in harnessOutput – possible evaluation error or empty result
