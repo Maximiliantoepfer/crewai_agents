@@ -1,0 +1,54 @@
+2025-06-21 15:54:57,628 - INFO - Starting CrewaiAgents at 2025-06-21T15:54:57.628665
+
+2025-06-21 15:54:57,629 - INFO - ___ Task 1  ___
+2025-06-21 15:54:59,466 - ERROR - An error occurred while handling task 1: An error occurred while running crew in task: An error occurred while running the crew: 1 validation error for Crew
+  Attribute `manager_llm` or `manager_agent` is required when using hierarchical process. [type=missing_manager_llm_or_manager_agent, input_value={'agents': [Agent(role=Se...\\logs/crew_output.log'}, input_type=dict]
+2025-06-21 17:05:53,658 - INFO - Starting CrewaiAgents at 2025-06-21T17:05:53.658751
+
+2025-06-21 17:05:53,658 - INFO - ___ Task 1  ___
+2025-06-21 17:09:19,049 - INFO - Usage Metrics: total_tokens=115889 prompt_tokens=109341 cached_prompt_tokens=88832 completion_tokens=6548 successful_requests=34
+2025-06-21 17:09:19,049 - INFO - Token usage: total_tokens=115889 prompt_tokens=109341 cached_prompt_tokens=88832 completion_tokens=6548 successful_requests=34
+2025-06-21 17:09:19,177 - ERROR - An error occurred while handling task 1: No data in harnessOutput – possible evaluation error or empty result
+2025-06-21 17:10:25,263 - INFO - Starting CrewaiAgents at 2025-06-21T17:10:25.263380
+
+2025-06-21 17:10:25,263 - INFO - ___ Task 1  ___
+2025-06-21 17:11:35,903 - INFO - Usage Metrics: total_tokens=113312 prompt_tokens=109533 cached_prompt_tokens=90752 completion_tokens=3779 successful_requests=36
+2025-06-21 17:11:35,903 - INFO - Token usage: total_tokens=113312 prompt_tokens=109533 cached_prompt_tokens=90752 completion_tokens=3779 successful_requests=36
+2025-06-21 17:11:35,943 - ERROR - An error occurred while handling task 1: No data in harnessOutput – possible evaluation error or empty result
+2025-06-22 11:31:19,798 - INFO - Starting CrewaiAgents at 2025-06-22T11:31:19.798362
+
+2025-06-22 11:31:19,798 - INFO - ___ Task 1  ___
+2025-06-22 11:31:23,803 - ERROR - An error occurred while handling task 1: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: /task/index/1 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000227D27A2A50>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte'))
+2025-06-22 11:42:12,958 - INFO - Starting CrewaiAgents at 2025-06-22T11:42:12.958809
+
+2025-06-22 11:42:12,959 - INFO - ___ Task 1  ___
+2025-06-22 11:44:05,875 - INFO - Usage Metrics: total_tokens=123404 prompt_tokens=119219 cached_prompt_tokens=96256 completion_tokens=4185 successful_requests=35
+2025-06-22 11:44:05,875 - INFO - Token usage: total_tokens=123404 prompt_tokens=119219 cached_prompt_tokens=96256 completion_tokens=4185 successful_requests=35
+2025-06-22 11:44:06,042 - ERROR - An error occurred while handling task 1: No data in harnessOutput – possible evaluation error or empty result
+2025-06-22 12:24:33,513 - INFO - Starting CrewaiAgents at 2025-06-22T12:24:33.513917
+
+2025-06-22 12:24:33,513 - INFO - ___ Task 1  ___
+2025-06-22 12:26:23,050 - INFO - Usage Metrics: total_tokens=98493 prompt_tokens=94780 cached_prompt_tokens=78592 completion_tokens=3713 successful_requests=36
+2025-06-22 12:26:23,050 - INFO - Token usage: total_tokens=98493 prompt_tokens=94780 cached_prompt_tokens=78592 completion_tokens=3713 successful_requests=36
+2025-06-22 12:26:23,092 - ERROR - An error occurred while handling task 1: No data in harnessOutput – possible evaluation error or empty result
+2025-06-22 12:30:12,835 - INFO - Starting CrewaiAgents at 2025-06-22T12:30:12.835598
+
+2025-06-22 12:30:12,835 - INFO - ___ Task 1  ___
+2025-06-22 17:09:40,226 - INFO - Starting CrewaiAgents at 2025-06-22T17:09:40.226785
+
+2025-06-22 17:09:40,227 - INFO - ___ Task 1  ___
+2025-06-22 17:12:45,472 - INFO - Usage Metrics: total_tokens=1930558 prompt_tokens=1925357 cached_prompt_tokens=1383296 completion_tokens=5201 successful_requests=32
+2025-06-22 17:12:45,472 - INFO - Token usage: total_tokens=1930558 prompt_tokens=1925357 cached_prompt_tokens=1383296 completion_tokens=5201 successful_requests=32
+2025-06-22 17:12:45,704 - ERROR - An error occurred while handling task 1: No data in harnessOutput – possible evaluation error or empty result
+2025-06-22 17:27:41,798 - INFO - Starting CrewaiAgents at 2025-06-22T17:27:41.798369
+
+2025-06-22 17:27:41,798 - INFO - ___ Task 1  ___
+2025-06-22 17:30:47,077 - INFO - Usage Metrics: total_tokens=2098880 prompt_tokens=2093949 cached_prompt_tokens=1700224 completion_tokens=4931 successful_requests=32
+2025-06-22 17:30:47,077 - INFO - Token usage: total_tokens=2098880 prompt_tokens=2093949 cached_prompt_tokens=1700224 completion_tokens=4931 successful_requests=32
+2025-06-22 17:30:47,098 - ERROR - An error occurred while handling task 1: No data in harnessOutput – possible evaluation error or empty result
+2025-07-04 13:52:03,201 - INFO - Starting CrewaiAgents at 2025-07-04T13:52:03.201197
+
+2025-07-04 13:52:03,201 - INFO - ___ Task 1  ___
+2025-07-04 13:55:13,440 - INFO - Usage Metrics: total_tokens=2243338 prompt_tokens=2238779 cached_prompt_tokens=2002048 completion_tokens=4559 successful_requests=32
+2025-07-04 13:55:13,443 - INFO - Token usage: total_tokens=2243338 prompt_tokens=2238779 cached_prompt_tokens=2002048 completion_tokens=4559 successful_requests=32
+2025-07-04 13:55:14,049 - ERROR - An error occurred while handling task 1: No data in harnessOutput – possible evaluation error or empty result

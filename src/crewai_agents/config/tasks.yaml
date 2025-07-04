@@ -1,0 +1,61 @@
+plan_task:
+  description: >
+    Your task is to understand the context and create a plan to solve the problem in the {repository}.
+    To do this, use the FileReadTool and DirectoryReadTool to inspect the structure and contents of the repository.
+    Think about which files are relevant and need to be adjusted to fix the error.
+    Break down the problem into manageable tasks and outline a strategy to address each one.
+
+  expected_output: >
+    A detailed, structured plan that outlines the steps to solve the problem in the repository {repository}.
+    The plan should reference specific files or components, based on what you inspected using the FileReadTool and DirectoryReadTool.
+    Once the plan is complete and covers all necessary actions, your task is finished — do not continue beyond that.
+
+  agent: planner
+
+
+coding_task:
+  description: >
+    Your task is to fix the issue described by the planner agent by modifying or creating code files inside the repository {repository}.
+    First, analyze which files already exist using your available tools.
+    Then decide whether to modify an existing file or create a new one.
+    
+    Use the FileReadTool to inspect file contents and FileWriterTool to apply your changes.
+    When modifying an existing file, read the entire file first and overwrite the complete file content with the updated version.
+    Do not attempt partial edits — always rewrite the entire file after applying your changes.
+
+    Only use FileWriterTool when you are ready to save finalized, working code.
+
+    Once all relevant changes are applied, use the GitCommitTool to commit your modifications with an appropriate commit message.
+
+    If you need to create a new file (e.g., helper.py), make sure the name is appropriate.
+    If modifying an existing file, be precise about which part to change.
+
+    Always explain briefly what file you are modifying and why.
+
+  expected_output: >
+    Code changes committed to the appropriate files in the repository {repository}, either by modifying existing files or creating new ones as necessary.
+    The changes should directly address the problem described in the plan.
+    Once the commit is made and your work is done, you do not need to perform any additional steps.
+
+  agent: coder
+
+
+testing_task:
+  description: >
+    Your task is to review the changes made by the coder agent in the repository {repository}.
+    Use FileReadTool and DirectoryReadTool to inspect the updated files and project structure.
+
+    If the repository includes test cases or a test suite, run them to verify correctness.
+    If no tests are available, perform a critical review of the modified or newly created files instead.
+
+    Provide feedback on whether the code is likely to solve the problem, whether it is logically consistent and of good quality.
+
+  expected_output: >
+    A judgment on whether the code changes are likely correct, including:
+    - Results from running any available tests, if present.
+    - If no tests are present, a structured review of the updated files based on their contents using FileReadTool.
+    - Suggestions for improvement or refactoring if needed.
+    Once you have completed your analysis and written your full feedback, the task is complete.
+
+  agent: tester
+
