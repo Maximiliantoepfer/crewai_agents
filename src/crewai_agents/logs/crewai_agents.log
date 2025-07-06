@@ -52,3 +52,35 @@
 2025-07-04 13:55:13,440 - INFO - Usage Metrics: total_tokens=2243338 prompt_tokens=2238779 cached_prompt_tokens=2002048 completion_tokens=4559 successful_requests=32
 2025-07-04 13:55:13,443 - INFO - Token usage: total_tokens=2243338 prompt_tokens=2238779 cached_prompt_tokens=2002048 completion_tokens=4559 successful_requests=32
 2025-07-04 13:55:14,049 - ERROR - An error occurred while handling task 1: No data in harnessOutput – possible evaluation error or empty result
+2025-07-06 10:54:49,855 - INFO - Starting CrewaiAgents at 2025-07-06T10:54:49.855458
+
+2025-07-06 10:54:49,855 - INFO - ___ Task 1  ___
+2025-07-06 10:55:27,357 - ERROR - An error occurred while handling task 1: An error occurred while running crew in task: An error occurred while running the crew: litellm.AuthenticationError: AuthenticationError: OpenAIException - Authentication Error, Invalid proxy server token passed. key=02ebdc9692e35e9c6ce2dd84939356343f20e56b2d90a9b0657d8c3e893f3098, not found in db. Create key via `/key/generate` call.
+2025-07-06 10:58:11,149 - INFO - Starting CrewaiAgents at 2025-07-06T10:58:11.149860
+
+2025-07-06 10:58:11,149 - INFO - ___ Task 1  ___
+2025-07-06 10:58:13,090 - ERROR - An error occurred while handling task 1: An error occurred while running crew in task: An error occurred while running the crew: litellm.AuthenticationError: AuthenticationError: OpenAIException - Authentication Error, Invalid proxy server token passed. key=02ebdc9692e35e9c6ce2dd84939356343f20e56b2d90a9b0657d8c3e893f3098, not found in db. Create key via `/key/generate` call.
+2025-07-06 11:01:25,953 - INFO - Starting CrewaiAgents at 2025-07-06T11:01:25.953836
+
+2025-07-06 11:01:25,953 - INFO - ___ Task 1  ___
+2025-07-06 11:01:27,573 - ERROR - An error occurred while handling task 1: An error occurred while running crew in task: An error occurred while running the crew: litellm.AuthenticationError: AuthenticationError: OpenAIException - Authentication Error, Invalid proxy server token passed. key=02ebdc9692e35e9c6ce2dd84939356343f20e56b2d90a9b0657d8c3e893f3098, not found in db. Create key via `/key/generate` call.
+2025-07-06 11:13:23,839 - INFO - Starting CrewaiAgents at 2025-07-06T11:13:23.839697
+
+2025-07-06 11:13:23,839 - INFO - ___ Task 1  ___
+2025-07-06 11:13:25,496 - ERROR - An error occurred while handling task 1: An error occurred while running crew in task: An error occurred while running the crew: litellm.AuthenticationError: AuthenticationError: OpenAIException - Authentication Error, Invalid proxy server token passed. key=02ebdc9692e35e9c6ce2dd84939356343f20e56b2d90a9b0657d8c3e893f3098, not found in db. Create key via `/key/generate` call.
+2025-07-06 11:17:25,219 - INFO - Starting CrewaiAgents at 2025-07-06T11:17:25.219982
+
+2025-07-06 11:17:25,219 - INFO - ___ Task 1  ___
+2025-07-06 11:17:26,971 - ERROR - An error occurred while handling task 1: An error occurred while running crew in task: An error occurred while running the crew: litellm.AuthenticationError: AuthenticationError: OpenAIException - Authentication Error, Invalid proxy server token passed. key=02ebdc9692e35e9c6ce2dd84939356343f20e56b2d90a9b0657d8c3e893f3098, not found in db. Create key via `/key/generate` call.
+2025-07-06 11:35:50,125 - INFO - Starting CrewaiAgents at 2025-07-06T11:35:50.125459
+
+2025-07-06 11:35:50,125 - INFO - ___ Task 1  ___
+2025-07-06 11:35:52,503 - ERROR - An error occurred while handling task 1: An error occurred while running crew in task: An error occurred while running the crew: litellm.AuthenticationError: AuthenticationError: OpenAIException - Authentication Error, Invalid proxy server token passed. key=02ebdc9692e35e9c6ce2dd84939356343f20e56b2d90a9b0657d8c3e893f3098, not found in db. Create key via `/key/generate` call.
+2025-07-06 11:37:18,698 - INFO - Starting CrewaiAgents at 2025-07-06T11:37:18.698806
+
+2025-07-06 11:37:18,699 - INFO - ___ Task 1  ___
+2025-07-06 11:37:20,298 - ERROR - An error occurred while handling task 1: An error occurred while running crew in task: An error occurred while running the crew: litellm.AuthenticationError: AuthenticationError: OpenAIException - Authentication Error, Invalid proxy server token passed. key=02ebdc9692e35e9c6ce2dd84939356343f20e56b2d90a9b0657d8c3e893f3098, not found in db. Create key via `/key/generate` call.
+2025-07-06 11:38:29,335 - INFO - Starting CrewaiAgents at 2025-07-06T11:38:29.335553
+
+2025-07-06 11:38:29,335 - INFO - ___ Task 1  ___
+2025-07-06 11:42:09,079 - ERROR - An error occurred while handling task 1: An error occurred while running crew in task: An error occurred while running the crew: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 42537. Please try again in 12.761s. Visit https://platform.openai.com/account/rate-limits to learn more.
