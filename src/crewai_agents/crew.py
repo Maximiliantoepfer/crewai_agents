@@ -15,7 +15,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY", "")
-os.environ['OPENAI_API_BASE'] = "http://188.245.32.59:4000/v1"
+os.environ['OPENAI_API_BASE'] = os.getenv("OPENAI_API_BASE", "")  # "http://188.245.32.59:4000/v1"
 directory_read_tool = DirectoryReadTool()
 # directory_search_tool = DirectorySearchTool("/repos")
 file_read_tool = FileReadTool()

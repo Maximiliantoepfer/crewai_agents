@@ -108,7 +108,7 @@ def handle_task(index):
     # Run tests
     test_payload = {
         "instance_id": instance_id,
-        "repoDir": repo_dir,  # mount with docker
+        "repoDir": f"/repos/repo_{index}",  # mount with docker
         "FAIL_TO_PASS": fail_tests,
         "PASS_TO_PASS": pass_tests
     }

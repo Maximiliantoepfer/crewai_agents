@@ -25,7 +25,7 @@ coding_task:
 
     Only use FileWriterTool when you are ready to save finalized, working code.
 
-    Once all relevant changes are applied, use the GitCommitTool to commit your modifications with an appropriate commit message.
+    Once all relevant changes are applied, use the GitCommitTool to add your modifications.
 
     If you need to create a new file (e.g., helper.py), make sure the name is appropriate.
     If modifying an existing file, be precise about which part to change.
@@ -33,9 +33,9 @@ coding_task:
     Always explain briefly what file you are modifying and why.
 
   expected_output: >
-    Code changes committed to the appropriate files in the repository {repository}, either by modifying existing files or creating new ones as necessary.
+    Code changes added to the appropriate files in the repository {repository}, either by modifying existing files or creating new ones as necessary.
     The changes should directly address the problem described in the plan.
-    Once the commit is made and your work is done, you do not need to perform any additional steps.
+    Once the changes are made and your work is done, you do not need to perform any additional steps.
 
   agent: coder
 
