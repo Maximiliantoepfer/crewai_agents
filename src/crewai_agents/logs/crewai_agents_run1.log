@@ -1,0 +1,236 @@
+2025-07-07 08:08:36,693 - INFO - Starting CrewaiAgents at 2025-07-07T08:08:36.693237
+
+2025-07-07 08:08:36,693 - INFO - ___ Task 1  ___
+2025-07-07 08:17:50,565 - INFO - Usage Metrics: total_tokens=1896396 prompt_tokens=1889758 cached_prompt_tokens=1528832 completion_tokens=6638 successful_requests=26
+2025-07-07 08:17:50,566 - INFO - Token usage: total_tokens=1896396 prompt_tokens=1889758 cached_prompt_tokens=1528832 completion_tokens=6638 successful_requests=26
+2025-07-07 08:22:24,730 - INFO - FAIL_TO_PASS passed: 0/2
+
+2025-07-07 08:22:24,731 - INFO - PASS_TO_PASS passed: 0/13
+
+2025-07-07 08:23:24,732 - INFO - ___ Task 2  ___
+2025-07-07 08:29:36,926 - ERROR - CrewAI LLM Exception: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1664. Please try again in 499ms. Visit https://platform.openai.com/account/rate-limits to learn more.
+2025-07-07 08:29:36,926 - ERROR - An error occurred while handling task 2: An error occurred while running crew in task: An error occurred while running the crew: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1664. Please try again in 499ms. Visit https://platform.openai.com/account/rate-limits to learn more.
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 725, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 653, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_utils\_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\resources\chat\completions\completions.py", line 925, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1037, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1664. Please try again in 499ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1853, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1826, in completion
+    response = openai_chat_completions.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 736, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1664. Please try again in 499ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\maxto\source\crewai_agents\src\crewai_agents\main.py", line 50, in run_crew
+    crew_output = crew.kickoff(inputs=inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 659, in kickoff
+    result = self._run_sequential_process()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 768, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 871, in _execute_tasks
+    task_output = task.execute_sync(
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 351, in execute_sync
+    return self._execute_core(agent, context, tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 499, in _execute_core
+    raise e  # Re-raise the exception after emitting the event
+    ^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 415, in _execute_core
+    result = agent.execute_task(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 435, in execute_task
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 411, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 507, in _execute_without_timeout
+    return self.agent_executor.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 121, in invoke
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 110, in invoke
+    formatted_answer = self._invoke_loop()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 206, in _invoke_loop
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 153, in _invoke_loop
+    answer = get_llm_response(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 160, in get_llm_response
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 151, in get_llm_response
+    answer = llm.call(
+             ^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 956, in call
+    return self._handle_non_streaming_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 768, in _handle_non_streaming_response
+    response = litellm.completion(**params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1283, in wrapper
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1161, in wrapper
+    result = original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 3241, in completion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2239, in exception_type
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 279, in exception_type
+    raise RateLimitError(
+litellm.exceptions.RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1664. Please try again in 499ms. Visit https://platform.openai.com/account/rate-limits to learn more.
+
+2025-07-07 08:29:36,926 - INFO - ___ Task 3  ___
+2025-07-07 08:43:47,267 - INFO - Usage Metrics: total_tokens=2741437 prompt_tokens=2735467 cached_prompt_tokens=2360448 completion_tokens=5970 successful_requests=40
+2025-07-07 08:43:47,267 - INFO - Token usage: total_tokens=2741437 prompt_tokens=2735467 cached_prompt_tokens=2360448 completion_tokens=5970 successful_requests=40
+2025-07-07 08:44:39,960 - ERROR - An error occurred while handling task 3: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 08:44:39,961 - INFO - ___ Task 4  ___
+2025-07-07 08:53:11,391 - INFO - Usage Metrics: total_tokens=1783266 prompt_tokens=1776206 cached_prompt_tokens=1524352 completion_tokens=7060 successful_requests=25
+2025-07-07 08:53:11,391 - INFO - Token usage: total_tokens=1783266 prompt_tokens=1776206 cached_prompt_tokens=1524352 completion_tokens=7060 successful_requests=25
+2025-07-07 08:58:59,969 - INFO - FAIL_TO_PASS passed: 0/1
+
+2025-07-07 08:58:59,969 - INFO - PASS_TO_PASS passed: 179/179
+
+2025-07-07 08:59:59,970 - INFO - ___ Task 5  ___
+2025-07-07 09:19:38,212 - INFO - Usage Metrics: total_tokens=3798956 prompt_tokens=3790410 cached_prompt_tokens=2260224 completion_tokens=8546 successful_requests=50
+2025-07-07 09:19:38,212 - INFO - Token usage: total_tokens=3798956 prompt_tokens=3790410 cached_prompt_tokens=2260224 completion_tokens=8546 successful_requests=50
+2025-07-07 09:20:32,934 - ERROR - An error occurred while handling task 5: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 09:20:32,935 - INFO - ___ Task 6  ___
+2025-07-07 09:39:45,717 - INFO - Usage Metrics: total_tokens=3917680 prompt_tokens=3911465 cached_prompt_tokens=2910976 completion_tokens=6215 successful_requests=50
+2025-07-07 09:39:45,718 - INFO - Token usage: total_tokens=3917680 prompt_tokens=3911465 cached_prompt_tokens=2910976 completion_tokens=6215 successful_requests=50
+2025-07-07 09:40:39,432 - ERROR - An error occurred while handling task 6: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 09:40:39,433 - INFO - ___ Task 7  ___
+2025-07-07 09:47:30,032 - INFO - Usage Metrics: total_tokens=743538 prompt_tokens=738260 cached_prompt_tokens=0 completion_tokens=5278 successful_requests=21
+2025-07-07 09:47:30,032 - INFO - Token usage: total_tokens=743538 prompt_tokens=738260 cached_prompt_tokens=0 completion_tokens=5278 successful_requests=21
+2025-07-07 09:50:21,651 - ERROR - An error occurred while handling task 7: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 09:50:21,652 - INFO - ___ Task 8  ___
+2025-07-07 09:57:07,606 - INFO - Usage Metrics: total_tokens=749208 prompt_tokens=742790 cached_prompt_tokens=0 completion_tokens=6418 successful_requests=21
+2025-07-07 09:57:07,606 - INFO - Token usage: total_tokens=749208 prompt_tokens=742790 cached_prompt_tokens=0 completion_tokens=6418 successful_requests=21
+2025-07-07 09:59:53,728 - ERROR - An error occurred while handling task 8: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 09:59:53,728 - INFO - ___ Task 9  ___
+2025-07-07 10:06:36,135 - INFO - Usage Metrics: total_tokens=747319 prompt_tokens=741273 cached_prompt_tokens=0 completion_tokens=6046 successful_requests=21
+2025-07-07 10:06:36,136 - INFO - Token usage: total_tokens=747319 prompt_tokens=741273 cached_prompt_tokens=0 completion_tokens=6046 successful_requests=21
+2025-07-07 10:09:16,870 - ERROR - An error occurred while handling task 9: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 10:09:16,870 - INFO - ___ Task 10  ___
+2025-07-07 10:15:50,701 - INFO - Usage Metrics: total_tokens=745411 prompt_tokens=739662 cached_prompt_tokens=0 completion_tokens=5749 successful_requests=21
+2025-07-07 10:15:50,701 - INFO - Token usage: total_tokens=745411 prompt_tokens=739662 cached_prompt_tokens=0 completion_tokens=5749 successful_requests=21
+2025-07-07 10:18:35,032 - ERROR - An error occurred while handling task 10: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 10:18:35,032 - INFO - ___ Task 11  ___
+2025-07-07 10:25:08,876 - INFO - Usage Metrics: total_tokens=744812 prompt_tokens=739299 cached_prompt_tokens=0 completion_tokens=5513 successful_requests=21
+2025-07-07 10:25:08,876 - INFO - Token usage: total_tokens=744812 prompt_tokens=739299 cached_prompt_tokens=0 completion_tokens=5513 successful_requests=21
+2025-07-07 10:28:01,486 - ERROR - An error occurred while handling task 11: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 10:28:01,487 - INFO - ___ Task 12  ___
+2025-07-07 10:34:40,075 - INFO - Usage Metrics: total_tokens=747011 prompt_tokens=740585 cached_prompt_tokens=0 completion_tokens=6426 successful_requests=21
+2025-07-07 10:34:40,075 - INFO - Token usage: total_tokens=747011 prompt_tokens=740585 cached_prompt_tokens=0 completion_tokens=6426 successful_requests=21
+2025-07-07 10:37:25,905 - ERROR - An error occurred while handling task 12: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 10:37:25,905 - INFO - ___ Task 13  ___
+2025-07-07 10:44:05,482 - INFO - Usage Metrics: total_tokens=748262 prompt_tokens=741891 cached_prompt_tokens=0 completion_tokens=6371 successful_requests=21
+2025-07-07 10:44:05,482 - INFO - Token usage: total_tokens=748262 prompt_tokens=741891 cached_prompt_tokens=0 completion_tokens=6371 successful_requests=21
+2025-07-07 10:46:51,210 - ERROR - An error occurred while handling task 13: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 10:46:51,210 - INFO - ___ Task 14  ___
+2025-07-07 10:53:22,590 - INFO - Usage Metrics: total_tokens=744538 prompt_tokens=739477 cached_prompt_tokens=0 completion_tokens=5061 successful_requests=21
+2025-07-07 10:53:22,590 - INFO - Token usage: total_tokens=744538 prompt_tokens=739477 cached_prompt_tokens=0 completion_tokens=5061 successful_requests=21
+2025-07-07 10:56:02,064 - ERROR - An error occurred while handling task 14: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 10:56:02,064 - INFO - ___ Task 15  ___
+2025-07-07 11:02:40,669 - INFO - Usage Metrics: total_tokens=746183 prompt_tokens=740487 cached_prompt_tokens=0 completion_tokens=5696 successful_requests=21
+2025-07-07 11:02:40,669 - INFO - Token usage: total_tokens=746183 prompt_tokens=740487 cached_prompt_tokens=0 completion_tokens=5696 successful_requests=21
+2025-07-07 11:05:20,647 - ERROR - An error occurred while handling task 15: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 11:05:20,648 - INFO - ___ Task 16  ___
+2025-07-07 11:11:57,927 - INFO - Usage Metrics: total_tokens=746568 prompt_tokens=740789 cached_prompt_tokens=0 completion_tokens=5779 successful_requests=21
+2025-07-07 11:11:57,927 - INFO - Token usage: total_tokens=746568 prompt_tokens=740789 cached_prompt_tokens=0 completion_tokens=5779 successful_requests=21
+2025-07-07 11:14:35,298 - ERROR - An error occurred while handling task 16: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 11:14:35,298 - INFO - ___ Task 17  ___
+2025-07-07 11:21:10,672 - INFO - Usage Metrics: total_tokens=746495 prompt_tokens=740924 cached_prompt_tokens=0 completion_tokens=5571 successful_requests=21
+2025-07-07 11:21:10,673 - INFO - Token usage: total_tokens=746495 prompt_tokens=740924 cached_prompt_tokens=0 completion_tokens=5571 successful_requests=21
+2025-07-07 11:23:49,013 - ERROR - An error occurred while handling task 17: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 11:23:49,013 - INFO - ___ Task 18  ___
+2025-07-07 11:30:51,766 - INFO - Usage Metrics: total_tokens=757586 prompt_tokens=750964 cached_prompt_tokens=0 completion_tokens=6622 successful_requests=21
+2025-07-07 11:30:51,766 - INFO - Token usage: total_tokens=757586 prompt_tokens=750964 cached_prompt_tokens=0 completion_tokens=6622 successful_requests=21
+2025-07-07 11:34:18,464 - ERROR - An error occurred while handling task 18: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 11:34:18,464 - INFO - ___ Task 19  ___
+2025-07-07 11:40:56,753 - INFO - Usage Metrics: total_tokens=753177 prompt_tokens=747476 cached_prompt_tokens=0 completion_tokens=5701 successful_requests=21
+2025-07-07 11:40:56,753 - INFO - Token usage: total_tokens=753177 prompt_tokens=747476 cached_prompt_tokens=0 completion_tokens=5701 successful_requests=21
+2025-07-07 11:43:37,263 - ERROR - An error occurred while handling task 19: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 11:43:37,263 - INFO - ___ Task 20  ___
+2025-07-07 11:50:19,961 - INFO - Usage Metrics: total_tokens=754693 prompt_tokens=748639 cached_prompt_tokens=0 completion_tokens=6054 successful_requests=21
+2025-07-07 11:50:19,961 - INFO - Token usage: total_tokens=754693 prompt_tokens=748639 cached_prompt_tokens=0 completion_tokens=6054 successful_requests=21
+2025-07-07 11:53:09,283 - ERROR - An error occurred while handling task 20: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 11:53:09,283 - INFO - ___ Task 21  ___
+2025-07-07 11:59:49,898 - INFO - Usage Metrics: total_tokens=754195 prompt_tokens=748348 cached_prompt_tokens=0 completion_tokens=5847 successful_requests=21
+2025-07-07 11:59:49,898 - INFO - Token usage: total_tokens=754195 prompt_tokens=748348 cached_prompt_tokens=0 completion_tokens=5847 successful_requests=21
+2025-07-07 12:02:38,763 - ERROR - An error occurred while handling task 21: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 12:02:38,764 - INFO - ___ Task 22  ___
+2025-07-07 12:09:20,951 - INFO - Usage Metrics: total_tokens=756922 prompt_tokens=750467 cached_prompt_tokens=0 completion_tokens=6455 successful_requests=21
+2025-07-07 12:09:20,951 - INFO - Token usage: total_tokens=756922 prompt_tokens=750467 cached_prompt_tokens=0 completion_tokens=6455 successful_requests=21
+2025-07-07 12:12:07,811 - ERROR - An error occurred while handling task 22: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 12:12:07,812 - INFO - ___ Task 23  ___
+2025-07-07 12:18:52,006 - INFO - Usage Metrics: total_tokens=753328 prompt_tokens=747878 cached_prompt_tokens=0 completion_tokens=5450 successful_requests=21
+2025-07-07 12:18:52,006 - INFO - Token usage: total_tokens=753328 prompt_tokens=747878 cached_prompt_tokens=0 completion_tokens=5450 successful_requests=21
+2025-07-07 12:21:43,741 - ERROR - An error occurred while handling task 23: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 12:21:43,741 - INFO - ___ Task 24  ___
+2025-07-07 12:28:25,710 - INFO - Usage Metrics: total_tokens=755381 prompt_tokens=749440 cached_prompt_tokens=0 completion_tokens=5941 successful_requests=21
+2025-07-07 12:28:25,710 - INFO - Token usage: total_tokens=755381 prompt_tokens=749440 cached_prompt_tokens=0 completion_tokens=5941 successful_requests=21
+2025-07-07 12:31:18,111 - ERROR - An error occurred while handling task 24: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 12:31:18,111 - INFO - ___ Task 25  ___
+2025-07-07 12:37:57,438 - INFO - Usage Metrics: total_tokens=756079 prompt_tokens=750054 cached_prompt_tokens=0 completion_tokens=6025 successful_requests=21
+2025-07-07 12:37:57,439 - INFO - Token usage: total_tokens=756079 prompt_tokens=750054 cached_prompt_tokens=0 completion_tokens=6025 successful_requests=21
+2025-07-07 12:40:46,568 - ERROR - An error occurred while handling task 25: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 12:40:46,568 - INFO - ___ Task 26  ___
+2025-07-07 12:47:25,794 - INFO - Usage Metrics: total_tokens=757394 prompt_tokens=751164 cached_prompt_tokens=0 completion_tokens=6230 successful_requests=21
+2025-07-07 12:47:25,794 - INFO - Token usage: total_tokens=757394 prompt_tokens=751164 cached_prompt_tokens=0 completion_tokens=6230 successful_requests=21
+2025-07-07 12:50:16,535 - ERROR - An error occurred while handling task 26: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 12:50:16,536 - INFO - ___ Task 27  ___
+2025-07-07 12:56:59,524 - INFO - Usage Metrics: total_tokens=755793 prompt_tokens=749976 cached_prompt_tokens=0 completion_tokens=5817 successful_requests=21
+2025-07-07 12:56:59,524 - INFO - Token usage: total_tokens=755793 prompt_tokens=749976 cached_prompt_tokens=0 completion_tokens=5817 successful_requests=21
+2025-07-07 12:59:52,059 - ERROR - An error occurred while handling task 27: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 12:59:52,059 - INFO - ___ Task 28  ___
+2025-07-07 13:07:04,354 - INFO - Usage Metrics: total_tokens=756775 prompt_tokens=750652 cached_prompt_tokens=0 completion_tokens=6123 successful_requests=21
+2025-07-07 13:07:04,354 - INFO - Token usage: total_tokens=756775 prompt_tokens=750652 cached_prompt_tokens=0 completion_tokens=6123 successful_requests=21
+2025-07-07 13:10:00,964 - ERROR - An error occurred while handling task 28: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 13:10:00,964 - INFO - ___ Task 29  ___
+2025-07-07 13:16:45,887 - INFO - Usage Metrics: total_tokens=756096 prompt_tokens=750213 cached_prompt_tokens=0 completion_tokens=5883 successful_requests=21
+2025-07-07 13:16:45,887 - INFO - Token usage: total_tokens=756096 prompt_tokens=750213 cached_prompt_tokens=0 completion_tokens=5883 successful_requests=21
+2025-07-07 13:19:42,728 - ERROR - An error occurred while handling task 29: No data in harnessOutput – possible evaluation error or empty result
+2025-07-07 13:19:42,728 - INFO - ___ Task 30  ___
+2025-07-07 13:26:30,098 - INFO - Usage Metrics: total_tokens=756844 prompt_tokens=751017 cached_prompt_tokens=0 completion_tokens=5827 successful_requests=21
+2025-07-07 13:26:30,098 - INFO - Token usage: total_tokens=756844 prompt_tokens=751017 cached_prompt_tokens=0 completion_tokens=5827 successful_requests=21
+2025-07-07 13:29:25,489 - ERROR - An error occurred while handling task 30: No data in harnessOutput – possible evaluation error or empty result

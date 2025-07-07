@@ -140,7 +140,7 @@ class CrewaiAgents():
             agents=self.agents, # Automatically created by the @agent decorator
             tasks=self.tasks, # Automatically created by the @task decorator
             process=Process.sequential, 
-            # memory=True,
+            memory=False,
             verbose=True,
             output_log_file=f'{log_directory}/crew_output.log', # Optional: specify a file to log the crew output
             # process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/

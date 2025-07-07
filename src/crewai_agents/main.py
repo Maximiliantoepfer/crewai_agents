@@ -4,6 +4,7 @@ import subprocess
 import sys
 import os
 import logging
+import time
 import warnings
 
 from datetime import datetime
@@ -54,7 +55,10 @@ def run_crew(repo:str="", task:str=""):
             logger.error(f"Error occurred while getting usage metrics: {e}")
         return crew_output
     except Exception as e:
-        raise Exception(f"An error occurred while running the crew: {e}")
+        import traceback
+        tb = traceback.format_exc()
+        logger.error(f"CrewAI LLM Exception: {e}")
+        raise Exception(f"An error occurred while running the crew: {e}\n{tb}")
 
 
 def handle_task(index):
@@ -145,10 +149,11 @@ def handle_task(index):
 if  __name__ == "__main__":
     logger.info(f"Starting CrewaiAgents at {datetime.now().isoformat()}\n")
     
-    for i in range(1, 2):
+    for i in range(5, 31):
         logger.info(f"___ Task {i}  ___")
         try:
             handle_task(i)
+            time.sleep(60)
         except Exception as e:
             print(f"An error occurred while handling task {i}: {e}")
             logger.error(f"An error occurred while handling task {i}: {e}")
