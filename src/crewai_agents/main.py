@@ -149,7 +149,7 @@ def handle_task(index):
 if  __name__ == "__main__":
     logger.info(f"Starting CrewaiAgents at {datetime.now().isoformat()}\n")
     
-    for i in range(5, 31):
+    for i in range(1, 31):
         logger.info(f"___ Task {i}  ___")
         try:
             handle_task(i)

@@ -1,0 +1,101 @@
+2025-07-07 17:59:03,717 - INFO - Starting CrewaiAgents at 2025-07-07T17:59:03.717142
+
+2025-07-07 17:59:03,718 - INFO - ___ Task 5  ___
+2025-07-07 18:05:37,275 - ERROR - CrewAI LLM Exception: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 153711, Requested 52774. Please try again in 1.945s. Visit https://platform.openai.com/account/rate-limits to learn more.
+2025-07-07 18:05:37,275 - ERROR - An error occurred while handling task 5: An error occurred while running crew in task: An error occurred while running the crew: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 153711, Requested 52774. Please try again in 1.945s. Visit https://platform.openai.com/account/rate-limits to learn more.
+2025-07-07 18:05:37,275 - INFO - ___ Task 6  ___
+2025-07-07 18:08:06,631 - ERROR - CrewAI LLM Exception: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 175951, Requested 51843. Please try again in 8.338s. Visit https://platform.openai.com/account/rate-limits to learn more.
+2025-07-07 18:08:06,631 - ERROR - An error occurred while handling task 6: An error occurred while running crew in task: An error occurred while running the crew: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 175951, Requested 51843. Please try again in 8.338s. Visit https://platform.openai.com/account/rate-limits to learn more.
+2025-07-07 18:08:06,631 - INFO - ___ Task 7  ___
+2025-07-07 18:14:42,827 - INFO - Usage Metrics: total_tokens=745022 prompt_tokens=739318 cached_prompt_tokens=0 completion_tokens=5704 successful_requests=21
+2025-07-07 18:14:42,827 - INFO - Token usage: total_tokens=745022 prompt_tokens=739318 cached_prompt_tokens=0 completion_tokens=5704 successful_requests=21
+2025-07-07 18:17:37,292 - ERROR - An error occurred while handling task 7: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 18:17:37,292 - INFO - ___ Task 8  ___
+2025-07-07 18:24:49,993 - INFO - Usage Metrics: total_tokens=744973 prompt_tokens=739875 cached_prompt_tokens=0 completion_tokens=5098 successful_requests=21
+2025-07-07 18:24:49,993 - INFO - Token usage: total_tokens=744973 prompt_tokens=739875 cached_prompt_tokens=0 completion_tokens=5098 successful_requests=21
+2025-07-07 18:27:53,691 - ERROR - An error occurred while handling task 8: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 18:27:53,691 - INFO - ___ Task 9  ___
+2025-07-07 18:34:45,145 - INFO - Usage Metrics: total_tokens=749780 prompt_tokens=742988 cached_prompt_tokens=0 completion_tokens=6792 successful_requests=21
+2025-07-07 18:34:45,145 - INFO - Token usage: total_tokens=749780 prompt_tokens=742988 cached_prompt_tokens=0 completion_tokens=6792 successful_requests=21
+2025-07-07 18:37:36,353 - ERROR - An error occurred while handling task 9: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 18:37:36,354 - INFO - ___ Task 10  ___
+2025-07-07 18:44:19,476 - INFO - Usage Metrics: total_tokens=745591 prompt_tokens=739834 cached_prompt_tokens=0 completion_tokens=5757 successful_requests=21
+2025-07-07 18:44:19,476 - INFO - Token usage: total_tokens=745591 prompt_tokens=739834 cached_prompt_tokens=0 completion_tokens=5757 successful_requests=21
+2025-07-07 18:47:15,072 - ERROR - An error occurred while handling task 10: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 18:47:15,072 - INFO - ___ Task 11  ___
+2025-07-07 18:54:00,299 - INFO - Usage Metrics: total_tokens=747685 prompt_tokens=741065 cached_prompt_tokens=0 completion_tokens=6620 successful_requests=21
+2025-07-07 18:54:00,299 - INFO - Token usage: total_tokens=747685 prompt_tokens=741065 cached_prompt_tokens=0 completion_tokens=6620 successful_requests=21
+2025-07-07 18:56:47,094 - ERROR - An error occurred while handling task 11: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 18:56:47,094 - INFO - ___ Task 12  ___
+2025-07-07 19:03:20,736 - INFO - Usage Metrics: total_tokens=744136 prompt_tokens=738966 cached_prompt_tokens=0 completion_tokens=5170 successful_requests=21
+2025-07-07 19:03:20,736 - INFO - Token usage: total_tokens=744136 prompt_tokens=738966 cached_prompt_tokens=0 completion_tokens=5170 successful_requests=21
+2025-07-07 19:06:10,099 - ERROR - An error occurred while handling task 12: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 19:06:10,099 - INFO - ___ Task 13  ___
+2025-07-07 19:12:49,364 - INFO - Usage Metrics: total_tokens=748189 prompt_tokens=741994 cached_prompt_tokens=0 completion_tokens=6195 successful_requests=21
+2025-07-07 19:12:49,364 - INFO - Token usage: total_tokens=748189 prompt_tokens=741994 cached_prompt_tokens=0 completion_tokens=6195 successful_requests=21
+2025-07-07 19:15:44,748 - ERROR - An error occurred while handling task 13: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 19:15:44,748 - INFO - ___ Task 14  ___
+2025-07-07 19:23:02,825 - INFO - Usage Metrics: total_tokens=747346 prompt_tokens=741126 cached_prompt_tokens=0 completion_tokens=6220 successful_requests=21
+2025-07-07 19:23:02,826 - INFO - Token usage: total_tokens=747346 prompt_tokens=741126 cached_prompt_tokens=0 completion_tokens=6220 successful_requests=21
+2025-07-07 19:25:53,179 - ERROR - An error occurred while handling task 14: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 19:25:53,180 - INFO - ___ Task 15  ___
+2025-07-07 19:32:44,954 - INFO - Usage Metrics: total_tokens=745942 prompt_tokens=740272 cached_prompt_tokens=0 completion_tokens=5670 successful_requests=21
+2025-07-07 19:32:44,954 - INFO - Token usage: total_tokens=745942 prompt_tokens=740272 cached_prompt_tokens=0 completion_tokens=5670 successful_requests=21
+2025-07-07 19:35:40,700 - ERROR - An error occurred while handling task 15: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 19:35:40,700 - INFO - ___ Task 16  ___
+2025-07-07 19:42:19,163 - INFO - Usage Metrics: total_tokens=749174 prompt_tokens=742461 cached_prompt_tokens=0 completion_tokens=6713 successful_requests=21
+2025-07-07 19:42:19,164 - INFO - Token usage: total_tokens=749174 prompt_tokens=742461 cached_prompt_tokens=0 completion_tokens=6713 successful_requests=21
+2025-07-07 19:45:07,688 - ERROR - An error occurred while handling task 16: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 19:45:07,688 - INFO - ___ Task 17  ___
+2025-07-07 19:51:59,582 - INFO - Usage Metrics: total_tokens=749321 prompt_tokens=742935 cached_prompt_tokens=0 completion_tokens=6386 successful_requests=21
+2025-07-07 19:51:59,584 - INFO - Token usage: total_tokens=749321 prompt_tokens=742935 cached_prompt_tokens=0 completion_tokens=6386 successful_requests=21
+2025-07-07 19:54:43,399 - ERROR - An error occurred while handling task 17: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 19:54:43,400 - INFO - ___ Task 18  ___
+2025-07-07 19:58:32,177 - ERROR - CrewAI LLM Exception: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 10898. Please try again in 3.269s. Visit https://platform.openai.com/account/rate-limits to learn more.
+2025-07-07 19:58:32,177 - ERROR - An error occurred while handling task 18: An error occurred while running crew in task: An error occurred while running the crew: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 10898. Please try again in 3.269s. Visit https://platform.openai.com/account/rate-limits to learn more.
+2025-07-07 19:58:32,177 - INFO - ___ Task 19  ___
+2025-07-07 20:02:00,867 - ERROR - CrewAI LLM Exception: litellm.RateLimitError: RateLimitError: OpenAIException - This model's maximum context length is 128000 tokens. However, your messages resulted in 246429 tokens. Please reduce the length of the messages.
+2025-07-07 20:02:00,867 - ERROR - An error occurred while handling task 19: An error occurred while running crew in task: An error occurred while running the crew: litellm.RateLimitError: RateLimitError: OpenAIException - This model's maximum context length is 128000 tokens. However, your messages resulted in 246429 tokens. Please reduce the length of the messages.
+2025-07-07 20:02:00,869 - INFO - ___ Task 20  ___
+2025-07-07 20:08:46,780 - INFO - Usage Metrics: total_tokens=754359 prompt_tokens=748173 cached_prompt_tokens=0 completion_tokens=6186 successful_requests=21
+2025-07-07 20:08:46,782 - INFO - Token usage: total_tokens=754359 prompt_tokens=748173 cached_prompt_tokens=0 completion_tokens=6186 successful_requests=21
+2025-07-07 20:11:53,660 - ERROR - An error occurred while handling task 20: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 20:11:53,660 - INFO - ___ Task 21  ___
+2025-07-07 20:13:50,270 - ERROR - CrewAI LLM Exception: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 159565, Requested 42537. Please try again in 630ms. Visit https://platform.openai.com/account/rate-limits to learn more.
+2025-07-07 20:13:50,271 - ERROR - An error occurred while handling task 21: An error occurred while running crew in task: An error occurred while running the crew: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 159565, Requested 42537. Please try again in 630ms. Visit https://platform.openai.com/account/rate-limits to learn more.
+2025-07-07 20:13:50,271 - INFO - ___ Task 22  ___
+2025-07-07 20:20:27,828 - INFO - Usage Metrics: total_tokens=754785 prompt_tokens=749409 cached_prompt_tokens=0 completion_tokens=5376 successful_requests=21
+2025-07-07 20:20:27,828 - INFO - Token usage: total_tokens=754785 prompt_tokens=749409 cached_prompt_tokens=0 completion_tokens=5376 successful_requests=21
+2025-07-07 20:23:35,838 - ERROR - An error occurred while handling task 22: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 20:23:35,838 - INFO - ___ Task 23  ___
+2025-07-07 20:30:23,854 - INFO - Usage Metrics: total_tokens=754784 prompt_tokens=749050 cached_prompt_tokens=0 completion_tokens=5734 successful_requests=21
+2025-07-07 20:30:23,854 - INFO - Token usage: total_tokens=754784 prompt_tokens=749050 cached_prompt_tokens=0 completion_tokens=5734 successful_requests=21
+2025-07-07 20:33:24,938 - ERROR - An error occurred while handling task 23: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 20:33:24,938 - INFO - ___ Task 24  ___
+2025-07-07 20:40:12,535 - INFO - Usage Metrics: total_tokens=755589 prompt_tokens=749651 cached_prompt_tokens=0 completion_tokens=5938 successful_requests=21
+2025-07-07 20:40:12,535 - INFO - Token usage: total_tokens=755589 prompt_tokens=749651 cached_prompt_tokens=0 completion_tokens=5938 successful_requests=21
+2025-07-07 20:43:17,788 - ERROR - An error occurred while handling task 24: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 20:43:17,789 - INFO - ___ Task 25  ___
+2025-07-07 20:50:02,377 - INFO - Usage Metrics: total_tokens=754628 prompt_tokens=749040 cached_prompt_tokens=0 completion_tokens=5588 successful_requests=21
+2025-07-07 20:50:02,377 - INFO - Token usage: total_tokens=754628 prompt_tokens=749040 cached_prompt_tokens=0 completion_tokens=5588 successful_requests=21
+2025-07-07 20:53:06,889 - ERROR - An error occurred while handling task 25: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 20:53:06,889 - INFO - ___ Task 26  ___
+2025-07-07 21:00:06,645 - INFO - Usage Metrics: total_tokens=763900 prompt_tokens=754166 cached_prompt_tokens=0 completion_tokens=9734 successful_requests=21
+2025-07-07 21:00:06,646 - INFO - Token usage: total_tokens=763900 prompt_tokens=754166 cached_prompt_tokens=0 completion_tokens=9734 successful_requests=21
+2025-07-07 21:03:13,106 - ERROR - An error occurred while handling task 26: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 21:03:13,106 - INFO - ___ Task 27  ___
+2025-07-07 21:10:13,113 - INFO - Usage Metrics: total_tokens=755178 prompt_tokens=749621 cached_prompt_tokens=0 completion_tokens=5557 successful_requests=21
+2025-07-07 21:10:13,113 - INFO - Token usage: total_tokens=755178 prompt_tokens=749621 cached_prompt_tokens=0 completion_tokens=5557 successful_requests=21
+2025-07-07 21:13:13,985 - ERROR - An error occurred while handling task 27: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 21:13:13,985 - INFO - ___ Task 28  ___
+2025-07-07 21:20:00,944 - INFO - Usage Metrics: total_tokens=757447 prompt_tokens=751066 cached_prompt_tokens=0 completion_tokens=6381 successful_requests=21
+2025-07-07 21:20:00,945 - INFO - Token usage: total_tokens=757447 prompt_tokens=751066 cached_prompt_tokens=0 completion_tokens=6381 successful_requests=21
+2025-07-07 21:22:58,831 - ERROR - An error occurred while handling task 28: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 21:22:58,831 - INFO - ___ Task 29  ___
+2025-07-07 21:29:43,690 - INFO - Usage Metrics: total_tokens=756093 prompt_tokens=750116 cached_prompt_tokens=0 completion_tokens=5977 successful_requests=21
+2025-07-07 21:29:43,690 - INFO - Token usage: total_tokens=756093 prompt_tokens=750116 cached_prompt_tokens=0 completion_tokens=5977 successful_requests=21
+2025-07-07 21:32:40,803 - ERROR - An error occurred while handling task 29: No data in harnessOutput � possible evaluation error or empty result
+2025-07-07 21:32:40,803 - INFO - ___ Task 30  ___
+2025-07-07 21:39:38,459 - INFO - Usage Metrics: total_tokens=760320 prompt_tokens=753446 cached_prompt_tokens=0 completion_tokens=6874 successful_requests=21
+2025-07-07 21:39:38,460 - INFO - Token usage: total_tokens=760320 prompt_tokens=753446 cached_prompt_tokens=0 completion_tokens=6874 successful_requests=21
+2025-07-07 21:42:37,083 - ERROR - An error occurred while handling task 30: No data in harnessOutput � possible evaluation error or empty result

@@ -1,0 +1,1215 @@
+2025-07-08 00:14:38,118 - INFO - Starting CrewaiAgents at 2025-07-08T00:14:38.118338
+
+2025-07-08 00:14:38,118 - INFO - ___ Task 1  ___
+2025-07-08 00:16:57,139 - ERROR - CrewAI LLM Exception: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1350. Please try again in 405ms. Visit https://platform.openai.com/account/rate-limits to learn more.
+2025-07-08 00:16:57,139 - ERROR - An error occurred while handling task 1: An error occurred while running crew in task: An error occurred while running the crew: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1350. Please try again in 405ms. Visit https://platform.openai.com/account/rate-limits to learn more.
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 725, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 653, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_utils\_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\resources\chat\completions\completions.py", line 925, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1037, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1350. Please try again in 405ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1853, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1826, in completion
+    response = openai_chat_completions.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 736, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1350. Please try again in 405ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\maxto\source\crewai_agents\src\crewai_agents\main.py", line 50, in run_crew
+    crew_output = crew.kickoff(inputs=inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 659, in kickoff
+    result = self._run_sequential_process()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 768, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 871, in _execute_tasks
+    task_output = task.execute_sync(
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 351, in execute_sync
+    return self._execute_core(agent, context, tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 499, in _execute_core
+    raise e  # Re-raise the exception after emitting the event
+    ^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 415, in _execute_core
+    result = agent.execute_task(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 435, in execute_task
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 411, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 507, in _execute_without_timeout
+    return self.agent_executor.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 121, in invoke
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 110, in invoke
+    formatted_answer = self._invoke_loop()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 206, in _invoke_loop
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 153, in _invoke_loop
+    answer = get_llm_response(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 160, in get_llm_response
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 151, in get_llm_response
+    answer = llm.call(
+             ^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 956, in call
+    return self._handle_non_streaming_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 768, in _handle_non_streaming_response
+    response = litellm.completion(**params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1283, in wrapper
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1161, in wrapper
+    result = original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 3241, in completion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2239, in exception_type
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 279, in exception_type
+    raise RateLimitError(
+litellm.exceptions.RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1350. Please try again in 405ms. Visit https://platform.openai.com/account/rate-limits to learn more.
+
+2025-07-08 00:16:57,140 - INFO - ___ Task 2  ___
+2025-07-08 00:23:28,602 - ERROR - CrewAI LLM Exception: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1261. Please try again in 378ms. Visit https://platform.openai.com/account/rate-limits to learn more.
+2025-07-08 00:23:28,602 - ERROR - An error occurred while handling task 2: An error occurred while running crew in task: An error occurred while running the crew: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1261. Please try again in 378ms. Visit https://platform.openai.com/account/rate-limits to learn more.
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 725, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 653, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_utils\_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\resources\chat\completions\completions.py", line 925, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1037, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1261. Please try again in 378ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1853, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1826, in completion
+    response = openai_chat_completions.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 736, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1261. Please try again in 378ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\maxto\source\crewai_agents\src\crewai_agents\main.py", line 50, in run_crew
+    crew_output = crew.kickoff(inputs=inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 659, in kickoff
+    result = self._run_sequential_process()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 768, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 871, in _execute_tasks
+    task_output = task.execute_sync(
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 351, in execute_sync
+    return self._execute_core(agent, context, tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 499, in _execute_core
+    raise e  # Re-raise the exception after emitting the event
+    ^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 415, in _execute_core
+    result = agent.execute_task(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 435, in execute_task
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 411, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 507, in _execute_without_timeout
+    return self.agent_executor.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 121, in invoke
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 110, in invoke
+    formatted_answer = self._invoke_loop()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 206, in _invoke_loop
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 153, in _invoke_loop
+    answer = get_llm_response(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 160, in get_llm_response
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 151, in get_llm_response
+    answer = llm.call(
+             ^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 956, in call
+    return self._handle_non_streaming_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 768, in _handle_non_streaming_response
+    response = litellm.completion(**params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1283, in wrapper
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1161, in wrapper
+    result = original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 3241, in completion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2239, in exception_type
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 279, in exception_type
+    raise RateLimitError(
+litellm.exceptions.RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1261. Please try again in 378ms. Visit https://platform.openai.com/account/rate-limits to learn more.
+
+2025-07-08 00:58:36,789 - INFO - Starting CrewaiAgents at 2025-07-08T00:58:36.789188
+
+2025-07-08 00:58:36,790 - INFO - ___ Task 1  ___
+2025-07-08 01:06:59,430 - ERROR - CrewAI LLM Exception: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1312. Please try again in 393ms. Visit https://platform.openai.com/account/rate-limits to learn more.
+2025-07-08 01:06:59,431 - ERROR - An error occurred while handling task 1: An error occurred while running crew in task: An error occurred while running the crew: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1312. Please try again in 393ms. Visit https://platform.openai.com/account/rate-limits to learn more.
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 725, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 653, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_utils\_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\resources\chat\completions\completions.py", line 925, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1037, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1312. Please try again in 393ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1853, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1826, in completion
+    response = openai_chat_completions.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 736, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1312. Please try again in 393ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\maxto\source\crewai_agents\src\crewai_agents\main.py", line 50, in run_crew
+    crew_output = crew.kickoff(inputs=inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 659, in kickoff
+    result = self._run_sequential_process()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 768, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 871, in _execute_tasks
+    task_output = task.execute_sync(
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 351, in execute_sync
+    return self._execute_core(agent, context, tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 499, in _execute_core
+    raise e  # Re-raise the exception after emitting the event
+    ^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 415, in _execute_core
+    result = agent.execute_task(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 435, in execute_task
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 411, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 507, in _execute_without_timeout
+    return self.agent_executor.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 121, in invoke
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 110, in invoke
+    formatted_answer = self._invoke_loop()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 206, in _invoke_loop
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 153, in _invoke_loop
+    answer = get_llm_response(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 160, in get_llm_response
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 151, in get_llm_response
+    answer = llm.call(
+             ^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 956, in call
+    return self._handle_non_streaming_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 768, in _handle_non_streaming_response
+    response = litellm.completion(**params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1283, in wrapper
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1161, in wrapper
+    result = original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 3241, in completion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2239, in exception_type
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 279, in exception_type
+    raise RateLimitError(
+litellm.exceptions.RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1312. Please try again in 393ms. Visit https://platform.openai.com/account/rate-limits to learn more.
+
+2025-07-08 01:06:59,431 - INFO - ___ Task 2  ___
+2025-07-08 01:09:41,562 - ERROR - CrewAI LLM Exception: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1634. Please try again in 490ms. Visit https://platform.openai.com/account/rate-limits to learn more.
+2025-07-08 01:09:41,563 - ERROR - An error occurred while handling task 2: An error occurred while running crew in task: An error occurred while running the crew: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1634. Please try again in 490ms. Visit https://platform.openai.com/account/rate-limits to learn more.
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 725, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 653, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_utils\_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\resources\chat\completions\completions.py", line 925, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1037, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1634. Please try again in 490ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1853, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1826, in completion
+    response = openai_chat_completions.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 736, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1634. Please try again in 490ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\maxto\source\crewai_agents\src\crewai_agents\main.py", line 50, in run_crew
+    crew_output = crew.kickoff(inputs=inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 659, in kickoff
+    result = self._run_sequential_process()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 768, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 871, in _execute_tasks
+    task_output = task.execute_sync(
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 351, in execute_sync
+    return self._execute_core(agent, context, tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 499, in _execute_core
+    raise e  # Re-raise the exception after emitting the event
+    ^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 415, in _execute_core
+    result = agent.execute_task(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 435, in execute_task
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 411, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 507, in _execute_without_timeout
+    return self.agent_executor.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 121, in invoke
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 110, in invoke
+    formatted_answer = self._invoke_loop()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 206, in _invoke_loop
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 153, in _invoke_loop
+    answer = get_llm_response(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 160, in get_llm_response
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 151, in get_llm_response
+    answer = llm.call(
+             ^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 956, in call
+    return self._handle_non_streaming_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 768, in _handle_non_streaming_response
+    response = litellm.completion(**params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1283, in wrapper
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1161, in wrapper
+    result = original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 3241, in completion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2239, in exception_type
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 279, in exception_type
+    raise RateLimitError(
+litellm.exceptions.RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 200000, Requested 1634. Please try again in 490ms. Visit https://platform.openai.com/account/rate-limits to learn more.
+
+2025-07-08 01:09:41,563 - INFO - ___ Task 3  ___
+2025-07-08 01:21:14,951 - INFO - Usage Metrics: total_tokens=1920518 prompt_tokens=1909128 cached_prompt_tokens=865536 completion_tokens=11390 successful_requests=23
+2025-07-08 01:21:14,951 - INFO - Token usage: total_tokens=1920518 prompt_tokens=1909128 cached_prompt_tokens=865536 completion_tokens=11390 successful_requests=23
+2025-07-08 01:26:24,072 - INFO - FAIL_TO_PASS passed: 0/1
+
+2025-07-08 01:26:24,072 - INFO - PASS_TO_PASS passed: 8/8
+
+2025-07-08 01:27:24,074 - INFO - ___ Task 4  ___
+2025-07-08 01:45:23,909 - ERROR - CrewAI LLM Exception: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 150667, Requested 56617. Please try again in 2.185s. Visit https://platform.openai.com/account/rate-limits to learn more.
+2025-07-08 01:45:23,910 - ERROR - An error occurred while handling task 4: An error occurred while running crew in task: An error occurred while running the crew: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 150667, Requested 56617. Please try again in 2.185s. Visit https://platform.openai.com/account/rate-limits to learn more.
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 725, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 653, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_utils\_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\resources\chat\completions\completions.py", line 925, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1037, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 150667, Requested 56617. Please try again in 2.185s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1853, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1826, in completion
+    response = openai_chat_completions.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 736, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 150667, Requested 56617. Please try again in 2.185s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\maxto\source\crewai_agents\src\crewai_agents\main.py", line 50, in run_crew
+    crew_output = crew.kickoff(inputs=inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 659, in kickoff
+    result = self._run_sequential_process()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 768, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 871, in _execute_tasks
+    task_output = task.execute_sync(
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 351, in execute_sync
+    return self._execute_core(agent, context, tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 499, in _execute_core
+    raise e  # Re-raise the exception after emitting the event
+    ^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 415, in _execute_core
+    result = agent.execute_task(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 435, in execute_task
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 411, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 507, in _execute_without_timeout
+    return self.agent_executor.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 121, in invoke
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 110, in invoke
+    formatted_answer = self._invoke_loop()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 206, in _invoke_loop
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 153, in _invoke_loop
+    answer = get_llm_response(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 160, in get_llm_response
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 151, in get_llm_response
+    answer = llm.call(
+             ^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 956, in call
+    return self._handle_non_streaming_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 768, in _handle_non_streaming_response
+    response = litellm.completion(**params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1283, in wrapper
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1161, in wrapper
+    result = original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 3241, in completion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2239, in exception_type
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 279, in exception_type
+    raise RateLimitError(
+litellm.exceptions.RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 150667, Requested 56617. Please try again in 2.185s. Visit https://platform.openai.com/account/rate-limits to learn more.
+
+2025-07-08 01:45:23,910 - INFO - ___ Task 5  ___
+2025-07-08 01:49:37,417 - ERROR - CrewAI LLM Exception: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 176052, Requested 50138. Please try again in 7.857s. Visit https://platform.openai.com/account/rate-limits to learn more.
+2025-07-08 01:49:37,417 - ERROR - An error occurred while handling task 5: An error occurred while running crew in task: An error occurred while running the crew: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 176052, Requested 50138. Please try again in 7.857s. Visit https://platform.openai.com/account/rate-limits to learn more.
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 725, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 653, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_utils\_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\resources\chat\completions\completions.py", line 925, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1037, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 176052, Requested 50138. Please try again in 7.857s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1853, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1826, in completion
+    response = openai_chat_completions.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 736, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 176052, Requested 50138. Please try again in 7.857s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\maxto\source\crewai_agents\src\crewai_agents\main.py", line 50, in run_crew
+    crew_output = crew.kickoff(inputs=inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 659, in kickoff
+    result = self._run_sequential_process()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 768, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 871, in _execute_tasks
+    task_output = task.execute_sync(
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 351, in execute_sync
+    return self._execute_core(agent, context, tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 499, in _execute_core
+    raise e  # Re-raise the exception after emitting the event
+    ^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 415, in _execute_core
+    result = agent.execute_task(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 435, in execute_task
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 411, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 507, in _execute_without_timeout
+    return self.agent_executor.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 121, in invoke
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 110, in invoke
+    formatted_answer = self._invoke_loop()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 206, in _invoke_loop
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 153, in _invoke_loop
+    answer = get_llm_response(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 160, in get_llm_response
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 151, in get_llm_response
+    answer = llm.call(
+             ^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 956, in call
+    return self._handle_non_streaming_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 768, in _handle_non_streaming_response
+    response = litellm.completion(**params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1283, in wrapper
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1161, in wrapper
+    result = original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 3241, in completion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2239, in exception_type
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 279, in exception_type
+    raise RateLimitError(
+litellm.exceptions.RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 176052, Requested 50138. Please try again in 7.857s. Visit https://platform.openai.com/account/rate-limits to learn more.
+
+2025-07-08 01:49:37,417 - INFO - ___ Task 6  ___
+2025-07-08 01:58:36,322 - ERROR - CrewAI LLM Exception: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 166736, Requested 59382. Please try again in 7.835s. Visit https://platform.openai.com/account/rate-limits to learn more.
+2025-07-08 01:58:36,322 - ERROR - An error occurred while handling task 6: An error occurred while running crew in task: An error occurred while running the crew: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 166736, Requested 59382. Please try again in 7.835s. Visit https://platform.openai.com/account/rate-limits to learn more.
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 725, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 653, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_utils\_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\resources\chat\completions\completions.py", line 925, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1037, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 166736, Requested 59382. Please try again in 7.835s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1853, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1826, in completion
+    response = openai_chat_completions.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 736, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 166736, Requested 59382. Please try again in 7.835s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\maxto\source\crewai_agents\src\crewai_agents\main.py", line 50, in run_crew
+    crew_output = crew.kickoff(inputs=inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 659, in kickoff
+    result = self._run_sequential_process()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 768, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 871, in _execute_tasks
+    task_output = task.execute_sync(
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 351, in execute_sync
+    return self._execute_core(agent, context, tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 499, in _execute_core
+    raise e  # Re-raise the exception after emitting the event
+    ^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 415, in _execute_core
+    result = agent.execute_task(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 435, in execute_task
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 411, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 507, in _execute_without_timeout
+    return self.agent_executor.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 121, in invoke
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 110, in invoke
+    formatted_answer = self._invoke_loop()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 206, in _invoke_loop
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 153, in _invoke_loop
+    answer = get_llm_response(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 160, in get_llm_response
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 151, in get_llm_response
+    answer = llm.call(
+             ^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 956, in call
+    return self._handle_non_streaming_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 768, in _handle_non_streaming_response
+    response = litellm.completion(**params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1283, in wrapper
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1161, in wrapper
+    result = original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 3241, in completion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2239, in exception_type
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 279, in exception_type
+    raise RateLimitError(
+litellm.exceptions.RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - Rate limit reached for gpt-4o-mini in organization org-2sipnCmBhxkbKtFzqN9EjXf5 on tokens per min (TPM): Limit 200000, Used 166736, Requested 59382. Please try again in 7.835s. Visit https://platform.openai.com/account/rate-limits to learn more.
+
+2025-07-08 01:58:36,322 - INFO - ___ Task 7  ___
+2025-07-08 02:05:17,540 - INFO - Usage Metrics: total_tokens=744914 prompt_tokens=739260 cached_prompt_tokens=0 completion_tokens=5654 successful_requests=21
+2025-07-08 02:05:17,540 - INFO - Token usage: total_tokens=744914 prompt_tokens=739260 cached_prompt_tokens=0 completion_tokens=5654 successful_requests=21
+2025-07-08 02:08:14,516 - ERROR - An error occurred while handling task 7: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 02:08:14,516 - INFO - ___ Task 8  ___
+2025-07-08 02:14:55,644 - INFO - Usage Metrics: total_tokens=747720 prompt_tokens=741522 cached_prompt_tokens=0 completion_tokens=6198 successful_requests=21
+2025-07-08 02:14:55,644 - INFO - Token usage: total_tokens=747720 prompt_tokens=741522 cached_prompt_tokens=0 completion_tokens=6198 successful_requests=21
+2025-07-08 02:17:40,217 - ERROR - An error occurred while handling task 8: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 02:17:40,217 - INFO - ___ Task 9  ___
+2025-07-08 02:24:22,103 - INFO - Usage Metrics: total_tokens=746771 prompt_tokens=741133 cached_prompt_tokens=0 completion_tokens=5638 successful_requests=21
+2025-07-08 02:24:22,104 - INFO - Token usage: total_tokens=746771 prompt_tokens=741133 cached_prompt_tokens=0 completion_tokens=5638 successful_requests=21
+2025-07-08 02:27:08,399 - ERROR - An error occurred while handling task 9: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 02:27:08,400 - INFO - ___ Task 10  ___
+2025-07-08 02:33:41,694 - INFO - Usage Metrics: total_tokens=744399 prompt_tokens=739202 cached_prompt_tokens=0 completion_tokens=5197 successful_requests=21
+2025-07-08 02:33:41,694 - INFO - Token usage: total_tokens=744399 prompt_tokens=739202 cached_prompt_tokens=0 completion_tokens=5197 successful_requests=21
+2025-07-08 02:36:26,952 - ERROR - An error occurred while handling task 10: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 02:36:26,952 - INFO - ___ Task 11  ___
+2025-07-08 02:37:27,959 - ERROR - CrewAI LLM Exception: litellm.RateLimitError: RateLimitError: OpenAIException - This model's maximum context length is 128000 tokens. However, your messages resulted in 242994 tokens. Please reduce the length of the messages.
+2025-07-08 02:37:27,960 - ERROR - An error occurred while handling task 11: An error occurred while running crew in task: An error occurred while running the crew: litellm.RateLimitError: RateLimitError: OpenAIException - This model's maximum context length is 128000 tokens. However, your messages resulted in 242994 tokens. Please reduce the length of the messages.
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 725, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 653, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_utils\_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\resources\chat\completions\completions.py", line 925, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1037, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 128000 tokens. However, your messages resulted in 242994 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1853, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1826, in completion
+    response = openai_chat_completions.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 736, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 400 - {'error': {'message': "This model's maximum context length is 128000 tokens. However, your messages resulted in 242994 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\maxto\source\crewai_agents\src\crewai_agents\main.py", line 50, in run_crew
+    crew_output = crew.kickoff(inputs=inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 659, in kickoff
+    result = self._run_sequential_process()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 768, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 871, in _execute_tasks
+    task_output = task.execute_sync(
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 351, in execute_sync
+    return self._execute_core(agent, context, tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 499, in _execute_core
+    raise e  # Re-raise the exception after emitting the event
+    ^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 415, in _execute_core
+    result = agent.execute_task(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 435, in execute_task
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 411, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 507, in _execute_without_timeout
+    return self.agent_executor.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 121, in invoke
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 110, in invoke
+    formatted_answer = self._invoke_loop()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 206, in _invoke_loop
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 153, in _invoke_loop
+    answer = get_llm_response(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 160, in get_llm_response
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 151, in get_llm_response
+    answer = llm.call(
+             ^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 956, in call
+    return self._handle_non_streaming_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 768, in _handle_non_streaming_response
+    response = litellm.completion(**params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1283, in wrapper
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1161, in wrapper
+    result = original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 3241, in completion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2239, in exception_type
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 279, in exception_type
+    raise RateLimitError(
+litellm.exceptions.RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - This model's maximum context length is 128000 tokens. However, your messages resulted in 242994 tokens. Please reduce the length of the messages.
+
+2025-07-08 02:37:27,960 - INFO - ___ Task 12  ___
+2025-07-08 02:38:27,795 - ERROR - CrewAI LLM Exception: litellm.RateLimitError: RateLimitError: OpenAIException - This model's maximum context length is 128000 tokens. However, your messages resulted in 242994 tokens. Please reduce the length of the messages.
+2025-07-08 02:38:27,796 - ERROR - An error occurred while handling task 12: An error occurred while running crew in task: An error occurred while running the crew: litellm.RateLimitError: RateLimitError: OpenAIException - This model's maximum context length is 128000 tokens. However, your messages resulted in 242994 tokens. Please reduce the length of the messages.
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 725, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 653, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_utils\_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\resources\chat\completions\completions.py", line 925, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1037, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 128000 tokens. However, your messages resulted in 242994 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1853, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1826, in completion
+    response = openai_chat_completions.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 736, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 400 - {'error': {'message': "This model's maximum context length is 128000 tokens. However, your messages resulted in 242994 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\maxto\source\crewai_agents\src\crewai_agents\main.py", line 50, in run_crew
+    crew_output = crew.kickoff(inputs=inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 659, in kickoff
+    result = self._run_sequential_process()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 768, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 871, in _execute_tasks
+    task_output = task.execute_sync(
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 351, in execute_sync
+    return self._execute_core(agent, context, tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 499, in _execute_core
+    raise e  # Re-raise the exception after emitting the event
+    ^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 415, in _execute_core
+    result = agent.execute_task(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 435, in execute_task
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 411, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 507, in _execute_without_timeout
+    return self.agent_executor.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 121, in invoke
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 110, in invoke
+    formatted_answer = self._invoke_loop()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 206, in _invoke_loop
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 153, in _invoke_loop
+    answer = get_llm_response(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 160, in get_llm_response
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 151, in get_llm_response
+    answer = llm.call(
+             ^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 956, in call
+    return self._handle_non_streaming_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 768, in _handle_non_streaming_response
+    response = litellm.completion(**params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1283, in wrapper
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1161, in wrapper
+    result = original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 3241, in completion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2239, in exception_type
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 279, in exception_type
+    raise RateLimitError(
+litellm.exceptions.RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - This model's maximum context length is 128000 tokens. However, your messages resulted in 242994 tokens. Please reduce the length of the messages.
+
+2025-07-08 02:38:27,796 - INFO - ___ Task 13  ___
+2025-07-08 02:45:09,282 - INFO - Usage Metrics: total_tokens=747666 prompt_tokens=741659 cached_prompt_tokens=0 completion_tokens=6007 successful_requests=21
+2025-07-08 02:45:09,282 - INFO - Token usage: total_tokens=747666 prompt_tokens=741659 cached_prompt_tokens=0 completion_tokens=6007 successful_requests=21
+2025-07-08 02:48:03,508 - ERROR - An error occurred while handling task 13: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 02:48:03,509 - INFO - ___ Task 14  ___
+2025-07-08 02:54:44,896 - INFO - Usage Metrics: total_tokens=748022 prompt_tokens=741764 cached_prompt_tokens=0 completion_tokens=6258 successful_requests=21
+2025-07-08 02:54:44,896 - INFO - Token usage: total_tokens=748022 prompt_tokens=741764 cached_prompt_tokens=0 completion_tokens=6258 successful_requests=21
+2025-07-08 02:57:27,113 - ERROR - An error occurred while handling task 14: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 02:57:27,113 - INFO - ___ Task 15  ___
+2025-07-08 03:04:03,711 - INFO - Usage Metrics: total_tokens=744102 prompt_tokens=739007 cached_prompt_tokens=0 completion_tokens=5095 successful_requests=21
+2025-07-08 03:04:03,711 - INFO - Token usage: total_tokens=744102 prompt_tokens=739007 cached_prompt_tokens=0 completion_tokens=5095 successful_requests=21
+2025-07-08 03:06:44,022 - ERROR - An error occurred while handling task 15: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 03:06:44,022 - INFO - ___ Task 16  ___
+2025-07-08 03:13:26,431 - INFO - Usage Metrics: total_tokens=748281 prompt_tokens=742146 cached_prompt_tokens=0 completion_tokens=6135 successful_requests=21
+2025-07-08 03:13:26,432 - INFO - Token usage: total_tokens=748281 prompt_tokens=742146 cached_prompt_tokens=0 completion_tokens=6135 successful_requests=21
+2025-07-08 03:16:13,784 - ERROR - An error occurred while handling task 16: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 03:16:13,784 - INFO - ___ Task 17  ___
+2025-07-08 03:19:17,069 - ERROR - CrewAI LLM Exception: litellm.RateLimitError: RateLimitError: OpenAIException - This model's maximum context length is 128000 tokens. However, your messages resulted in 244298 tokens. Please reduce the length of the messages.
+2025-07-08 03:19:17,069 - ERROR - An error occurred while handling task 17: An error occurred while running crew in task: An error occurred while running the crew: litellm.RateLimitError: RateLimitError: OpenAIException - This model's maximum context length is 128000 tokens. However, your messages resulted in 244298 tokens. Please reduce the length of the messages.
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 725, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 653, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_utils\_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\resources\chat\completions\completions.py", line 925, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1249, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\openai\_base_client.py", line 1037, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 128000 tokens. However, your messages resulted in 244298 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1853, in completion
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 1826, in completion
+    response = openai_chat_completions.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\llms\openai\openai.py", line 736, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 400 - {'error': {'message': "This model's maximum context length is 128000 tokens. However, your messages resulted in 244298 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\maxto\source\crewai_agents\src\crewai_agents\main.py", line 50, in run_crew
+    crew_output = crew.kickoff(inputs=inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 659, in kickoff
+    result = self._run_sequential_process()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 768, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\crew.py", line 871, in _execute_tasks
+    task_output = task.execute_sync(
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 351, in execute_sync
+    return self._execute_core(agent, context, tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 499, in _execute_core
+    raise e  # Re-raise the exception after emitting the event
+    ^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\task.py", line 415, in _execute_core
+    result = agent.execute_task(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 435, in execute_task
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 411, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agent.py", line 507, in _execute_without_timeout
+    return self.agent_executor.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 121, in invoke
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 110, in invoke
+    formatted_answer = self._invoke_loop()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 206, in _invoke_loop
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 153, in _invoke_loop
+    answer = get_llm_response(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 160, in get_llm_response
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\utilities\agent_utils.py", line 151, in get_llm_response
+    answer = llm.call(
+             ^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 956, in call
+    return self._handle_non_streaming_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\crewai\llm.py", line 768, in _handle_non_streaming_response
+    response = litellm.completion(**params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1283, in wrapper
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\utils.py", line 1161, in wrapper
+    result = original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\main.py", line 3241, in completion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2239, in exception_type
+    raise e
+  File "C:\Users\maxto\anaconda3\envs\crewai\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 279, in exception_type
+    raise RateLimitError(
+litellm.exceptions.RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - This model's maximum context length is 128000 tokens. However, your messages resulted in 244298 tokens. Please reduce the length of the messages.
+
+2025-07-08 03:19:17,069 - INFO - ___ Task 18  ___
+2025-07-08 03:25:59,719 - INFO - Usage Metrics: total_tokens=754580 prompt_tokens=749110 cached_prompt_tokens=0 completion_tokens=5470 successful_requests=21
+2025-07-08 03:25:59,719 - INFO - Token usage: total_tokens=754580 prompt_tokens=749110 cached_prompt_tokens=0 completion_tokens=5470 successful_requests=21
+2025-07-08 03:29:00,743 - ERROR - An error occurred while handling task 18: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 03:29:00,743 - INFO - ___ Task 19  ___
+2025-07-08 03:35:36,151 - INFO - Usage Metrics: total_tokens=751937 prompt_tokens=746279 cached_prompt_tokens=0 completion_tokens=5658 successful_requests=21
+2025-07-08 03:35:36,151 - INFO - Token usage: total_tokens=751937 prompt_tokens=746279 cached_prompt_tokens=0 completion_tokens=5658 successful_requests=21
+2025-07-08 03:38:25,930 - ERROR - An error occurred while handling task 19: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 03:38:25,930 - INFO - ___ Task 20  ___
+2025-07-08 03:45:03,356 - INFO - Usage Metrics: total_tokens=754420 prompt_tokens=748500 cached_prompt_tokens=0 completion_tokens=5920 successful_requests=21
+2025-07-08 03:45:03,356 - INFO - Token usage: total_tokens=754420 prompt_tokens=748500 cached_prompt_tokens=0 completion_tokens=5920 successful_requests=21
+2025-07-08 03:48:00,252 - ERROR - An error occurred while handling task 20: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 03:48:00,252 - INFO - ___ Task 21  ___
+2025-07-08 03:54:36,020 - INFO - Usage Metrics: total_tokens=751832 prompt_tokens=746534 cached_prompt_tokens=0 completion_tokens=5298 successful_requests=21
+2025-07-08 03:54:36,020 - INFO - Token usage: total_tokens=751832 prompt_tokens=746534 cached_prompt_tokens=0 completion_tokens=5298 successful_requests=21
+2025-07-08 03:57:27,149 - ERROR - An error occurred while handling task 21: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 03:57:27,149 - INFO - ___ Task 22  ___
+2025-07-08 04:04:07,498 - INFO - Usage Metrics: total_tokens=756373 prompt_tokens=750248 cached_prompt_tokens=0 completion_tokens=6125 successful_requests=21
+2025-07-08 04:04:07,499 - INFO - Token usage: total_tokens=756373 prompt_tokens=750248 cached_prompt_tokens=0 completion_tokens=6125 successful_requests=21
+2025-07-08 04:07:01,395 - ERROR - An error occurred while handling task 22: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 04:07:01,396 - INFO - ___ Task 23  ___
+2025-07-08 04:13:49,569 - INFO - Usage Metrics: total_tokens=754706 prompt_tokens=748995 cached_prompt_tokens=0 completion_tokens=5711 successful_requests=21
+2025-07-08 04:13:49,570 - INFO - Token usage: total_tokens=754706 prompt_tokens=748995 cached_prompt_tokens=0 completion_tokens=5711 successful_requests=21
+2025-07-08 04:16:37,975 - ERROR - An error occurred while handling task 23: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 04:16:37,975 - INFO - ___ Task 24  ___
+2025-07-08 04:24:04,384 - INFO - Usage Metrics: total_tokens=755537 prompt_tokens=749530 cached_prompt_tokens=0 completion_tokens=6007 successful_requests=21
+2025-07-08 04:24:04,385 - INFO - Token usage: total_tokens=755537 prompt_tokens=749530 cached_prompt_tokens=0 completion_tokens=6007 successful_requests=21
+2025-07-08 04:27:00,209 - ERROR - An error occurred while handling task 24: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 04:27:00,209 - INFO - ___ Task 25  ___
+2025-07-08 04:34:03,957 - INFO - Usage Metrics: total_tokens=755733 prompt_tokens=749665 cached_prompt_tokens=0 completion_tokens=6068 successful_requests=21
+2025-07-08 04:34:03,957 - INFO - Token usage: total_tokens=755733 prompt_tokens=749665 cached_prompt_tokens=0 completion_tokens=6068 successful_requests=21
+2025-07-08 04:37:00,615 - ERROR - An error occurred while handling task 25: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 04:37:00,615 - INFO - ___ Task 26  ___
+2025-07-08 04:43:59,678 - INFO - Usage Metrics: total_tokens=755758 prompt_tokens=749928 cached_prompt_tokens=0 completion_tokens=5830 successful_requests=21
+2025-07-08 04:43:59,678 - INFO - Token usage: total_tokens=755758 prompt_tokens=749928 cached_prompt_tokens=0 completion_tokens=5830 successful_requests=21
+2025-07-08 04:46:56,416 - ERROR - An error occurred while handling task 26: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 04:46:56,416 - INFO - ___ Task 27  ___
+2025-07-08 04:53:43,124 - INFO - Usage Metrics: total_tokens=754886 prompt_tokens=749405 cached_prompt_tokens=0 completion_tokens=5481 successful_requests=21
+2025-07-08 04:53:43,125 - INFO - Token usage: total_tokens=754886 prompt_tokens=749405 cached_prompt_tokens=0 completion_tokens=5481 successful_requests=21
+2025-07-08 04:56:38,689 - ERROR - An error occurred while handling task 27: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 04:56:38,690 - INFO - ___ Task 28  ___
+2025-07-08 05:03:23,916 - INFO - Usage Metrics: total_tokens=756407 prompt_tokens=750357 cached_prompt_tokens=0 completion_tokens=6050 successful_requests=21
+2025-07-08 05:03:23,916 - INFO - Token usage: total_tokens=756407 prompt_tokens=750357 cached_prompt_tokens=0 completion_tokens=6050 successful_requests=21
+2025-07-08 05:06:18,764 - ERROR - An error occurred while handling task 28: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 05:06:18,764 - INFO - ___ Task 29  ___
+2025-07-08 05:12:57,594 - INFO - Usage Metrics: total_tokens=754559 prompt_tokens=749210 cached_prompt_tokens=0 completion_tokens=5349 successful_requests=21
+2025-07-08 05:12:57,595 - INFO - Token usage: total_tokens=754559 prompt_tokens=749210 cached_prompt_tokens=0 completion_tokens=5349 successful_requests=21
+2025-07-08 05:15:54,823 - ERROR - An error occurred while handling task 29: No data in harnessOutput – possible evaluation error or empty result
+2025-07-08 05:15:54,824 - INFO - ___ Task 30  ___
+2025-07-08 05:22:42,066 - INFO - Usage Metrics: total_tokens=758199 prompt_tokens=751865 cached_prompt_tokens=0 completion_tokens=6334 successful_requests=21
+2025-07-08 05:22:42,067 - INFO - Token usage: total_tokens=758199 prompt_tokens=751865 cached_prompt_tokens=0 completion_tokens=6334 successful_requests=21
+2025-07-08 05:25:37,355 - ERROR - An error occurred while handling task 30: No data in harnessOutput – possible evaluation error or empty result
